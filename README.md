@@ -25,7 +25,7 @@ Prezentare finala: drumurile multiple, prompturile mele, descrierea si tagurile,
 
 ## Structura
 
-- `Unity/` - aplicatia VR (Unity 6 LTS, Meta XR SDK), vine in saptamanile urmatoare
+- `Unity/` - aplicatia VR: proiectul de baza (Unity 6000.6.4f1, URP); Meta XR SDK urmeaza
 - serverul de pe PC (Node) se bazeaza pe hub-ul meu Soft Shape: fisiere, indexare CLIP, taguri JoyTag/WD14, apeluri catre model
 
 ## Progres saptamanal
