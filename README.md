@@ -11,6 +11,11 @@ Team members: Aluculesei Robert (proiect individual)
 State of the art, features, user journey, componente, moodboard si tehnologii:
 https://docs.google.com/document/d/1ISRN_SnLLyiOWoaZlD__LqiLcTXfk2tYprkik-1qxUc/edit?usp=sharing
 
+Tema 5 - Main Modules (user story map, journey maps, storyboard, planul de asset-uri):
+https://docs.google.com/document/d/1Y4efqNdeUUfywyRKNcmhAzpjsgUnVZtKMHkzw0swKtA/edit?usp=sharing
+
+Storyboard-ul (schitele din document) e in `docs/storyboard`, desenat cu `docs/tools/storyboard.py`.
+
 ## Pe scurt
 
 O camera virtuala (modelata dupa camera mea de acasa) in care fisierele de pe PC apar ca niste carduri. Le prinzi cu mana, le lipesti pe pereti sau le lasi sa pluteasca.
@@ -34,3 +39,8 @@ Prezentare finala: drumurile multiple, prompturile mele, descrierea si tagurile,
 
 - Ideea si documentul de state of the art
 - Repo-ul
+
+### Saptamana 2
+
+- Tema 5: user story map (creator, participant la studiu, cercetator), 3 journey maps, storyboard de 11 cadre, planul de asset-uri
+- Planul camerei la scara, pentru graybox

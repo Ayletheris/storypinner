@@ -1,0 +1,317 @@
+<html><head><meta charset="utf-8"><title>Storypinner - Tema 5 - Main Modules</title></head>
+<body style="font-family:Arial">
+
+<h1>Storypinner</h1>
+<p><b>Meta Quest 2, Hand Tracking</b> (tema Innovative User Experience) | Aluculesei Robert (proiect individual)</p>
+<p><i>Un spatiu VR al tau, in care iti aranjezi cu mainile pozele si textele de pe calculator, iar aplicatia te ajuta sa legi ideile intre ele si sa continui o poveste pe care ai scris-o.</i></p>
+<p>In cele ce urmeaza descriu versiunea ideala a aplicatiei. La fiecare feature scrie in paranteza cand intra: <b>(partiala)</b>, <b>(finala)</b> sau <b>(daca e timp)</b>. Cel mai detaliat este drumul functionalitatii principale: legi textele cu fire si alegi ce face AI-ul cu ele.</p>
+<p>Documentul anterior (state of the art, features, componente, moodboard): <a href="https://docs.google.com/document/d/1ISRN_SnLLyiOWoaZlD__LqiLcTXfk2tYprkik-1qxUc/edit?usp=sharing">Storypinner - State of the Art</a>. Repo: <a href="https://github.com/Ayletheris/storypinner">github.com/Ayletheris/storypinner</a></p>
+
+<h1>User Story Map (2p)</h1>
+
+<h2>Utilizator 1. Creatorul</h2>
+<p>Utilizatorul aplicatiei mele este cineva care lucreaza creativ (scrie, deseneaza, face jocuri) si are ideile imprastiate in foldere de poze, board-uri si documente lungi. Primul utilizator sunt eu: am un folder cu imagini de referinta si o carte la care lucrez. Foloseste Quest 2 cu mainile (fara controllere), stand sau in picioare, in camera lui, cu PC-ul pornit in aceeasi retea.</p>
+
+<ol>
+<li><b>Goal 1. Isi doreste sa aiba ideile de pe PC intr-un singur loc, pe care sa-l vada tot odata.</b>
+ <ol>
+ <li><b>Activitate 1. Porneste aplicatia si alege ce folder deschide.</b>
+  <ol>
+  <li>Serverul de pe PC porneste odata cu Soft Shape si afiseaza adresa lui (ex. 192.168.1.20:3456); castile il gasesc singure in retea (partiala).</li>
+  <li>Main Menu: "Continua ultima camera" (preselectat), "Alege alt folder" (lista folderelor permise pe server), "Tutorial" (partiala).</li>
+  <li>Alege camera: camera mea de acasa sau o varianta extra (atelier, biblioteca) (daca e timp).</li>
+  <li>Tutorial la prima pornire, 3 pasi: prinzi un card, il lipesti pe perete, legi doua carduri. Fiecare pas trece singur cand l-ai facut (partiala).</li>
+  </ol></li>
+ <li><b>Activitate 2. Scoate fisierele de pe raft.</b>
+  <ol>
+  <li>Raftul sta langa birou, cu 3 sertare pe tipuri: Imagini, Texte, Carti. Pe fiecare scrie cate fisiere are (partiala).</li>
+  <li>Poke pe un sertar il deschide; fisierele apar ca fise mici (6 x 4 cm) cu numele si o miniatura (partiala).</li>
+  <li>Pinch pe o fisa si tragi afara: la 20 cm de raft fisa devine card de marime normala (imagine 30 cm latime, text 15 x 21 cm, cat o foaie A5) (partiala).</li>
+  <li>Cautare pe raft: palma in sus + pinch pe lupa, scrii cu tastatura Quest; raman doar fisierele care se potrivesc (dupa nume sau, cu CLIP, dupa continut) (finala).</li>
+  </ol></li>
+ <li><b>Activitate 3. Aranjeaza cardurile in camera.</b>
+  <ol>
+  <li>Prindere: pinch pe card si il muti. Conturul devine ocru cat timp e tinut (partiala).</li>
+  <li>Lipire: lasat la sub 15 cm de un perete, cardul se lipeste, paralel cu peretele (animatie 0.2 s, sunet de hartie). Lasat in aer, ramane acolo (partiala).</li>
+  <li>Marime: cu ambele maini pe acelasi card il mari sau il micsorezi, intre 0.5x si 3x (partiala).</li>
+  <li>Aruncare: palma deschisa, gest rapid spre podea; cardul dispare din camera (fisierul de pe PC ramane). Ultima aruncare se poate anula din meniul de pe incheietura (partiala).</li>
+  <li>Notita noua: palma in sus + pinch deschide tastatura Quest; textul devine un card text nou si un fisier .md nou pe PC (partiala).</li>
+  <li>Meniul de pe incheietura: intorci mana stanga si apar Anuleaza, Salveaza, Meniu (partiala).</li>
+  </ol></li>
+ </ol></li>
+
+<li><b>Goal 2. Isi doreste sa lege ideile si sa continue povestea cu ajutorul AI-ului. (FUNCTIONALITATEA PRINCIPALA)</b>
+ <ol>
+ <li><b>Activitate 1. Leaga cardurile cu fire.</b>
+  <ol>
+  <li>Pinch pe marginea unui card (banda de 2 cm de la margine) porneste un fir din punctul acela (partiala).</li>
+  <li>Tragi pana la alt card; cand mana e la sub 5 cm de el, cardul se lumineaza. Dai drumul: firul se leaga. Dat drumul in gol: firul dispare (partiala).</li>
+  <li>Firul are sens (de la primul card la al doilea), aratat cu o sageata mica la mijloc. Mai multe fire unul dupa altul fac un lant, citit in ordinea lor (partiala).</li>
+  <li>Firul ramane legat si cand muti cardurile; se curbeaza putin, ca o ata (partiala).</li>
+  <li>Stergerea unui fir: pinch pe fir si il tragi in jos ca pe o ata, se rupe (partiala).</li>
+  </ol></li>
+ <li><b>Activitate 2. Alege ce face AI-ul cu lantul.</b>
+  <ol>
+  <li>Poke pe un fir selecteaza tot lantul din care face parte: toate cardurile lui primesc contur ocru (partiala).</li>
+  <li>Langa ultimul card din lant apare dropdown-ul cu actiuni, la inaltimea mainii (partiala).</li>
+  <li>Continua textul: scrie ce urmeaza dupa ultimul card din lant (partiala).</li>
+  <li>Scoate idei: scoate ideile, personajele si intrebarile ramase deschise din textele legate (finala).</li>
+  <li>Prompturile mele: actiunile salvate de mine ("Scrie dialogul", "Fa-l mai intunecat"), marcate cu * (finala).</li>
+  <li>Daca lantul are si imagini, descrierea lor e trimisa impreuna cu textele (finala).</li>
+  </ol></li>
+ <li><b>Activitate 3. Primeste mai multe drumuri si alege unul.</b>
+  <ol>
+  <li>Cat timp asteapta, firele lantului pulseaza; mainile raman libere. Palma spre lant 1 s anuleaza cererea (partiala).</li>
+  <li>Din capatul lantului ies 3 ramuri semitransparente, in evantai, la ~40 cm una de alta. Fiecare are un titlu scurt si inceputul textului (finala; la partiala vine o singura varianta).</li>
+  <li>Pinch tinut pe o ramura o mareste (2x) ca sa o citesti toata; cand dai drumul revine (finala).</li>
+  <li>Pinch scurt pe o ramura o pastreaza: devine card normal, legat de lant (partiala).</li>
+  <li>Celelalte raman ca variante pana le arunci cu palma; "Inca 3" pe dropdown cere alte variante (finala).</li>
+  </ol></li>
+ <li><b>Activitate 4. Continua de unde a ramas.</b>
+  <ol>
+  <li>Cardul pastrat devine capatul lantului; poti rula din nou dropdown-ul pe el (partiala).</li>
+  <li>Ce pastrezi se salveaza intr-un fisier text nou pe PC (ex. carte_continuare.md), in ordinea lantului. Textele originale nu se schimba (partiala).</li>
+  </ol></li>
+ </ol></li>
+
+<li><b>Goal 3. Isi doreste sa gaseasca legaturi intre imagini si idei la care nu s-a gandit.</b>
+ <ol>
+ <li><b>Activitate 1. Vede ce e intr-o imagine.</b>
+  <ol>
+  <li>Poke pe un card imagine: sub el apare descrierea scurta (o fraza), iar tagurile se aseaza ca bule de 5 cm, in arc deasupra lui (partiala).</li>
+  </ol></li>
+ <li><b>Activitate 2. Exploreaza un tag.</b>
+  <ol>
+  <li>Poke pe o bula de tag deschide 3 optiuni: Imagini cu tagul, Taguri apropiate, Texte cu cuvantul (finala).</li>
+  <li>Rezultatele apar ca fise mici langa bula; orice fisa o poti trage afara ca si card (finala).</li>
+  </ol></li>
+ <li><b>Activitate 3. Cere sugestii cu butonul +.</b>
+  <ol>
+  <li>Langa cardul selectat pluteste un + de 4 cm, legat de card cu o linie subtire (finala).</li>
+  <li>Poke pe +: apar 3-5 sugestii (imagini apropiate CLIP, idei text, fisiere care se potrivesc). Le pastrezi sau le arunci ca la drumuri (finala).</li>
+  </ol></li>
+ <li><b>Activitate 4. Imagini asemanatoare.</b>
+  <ol>
+  <li>Din meniul cardului: in jurul imaginii apar 6 imagini apropiate din folder (cautare CLIP dupa imagine) (finala).</li>
+  </ol></li>
+ </ol></li>
+
+<li><b>Goal 4. Isi doreste sa lucreze pe cartea lui ca pe un drum prin camera.</b>
+ <ol>
+ <li><b>Activitate 1. Deschide cartea.</b>
+  <ol>
+  <li>Trage o carte din sertarul Carti si o pune pe birou; poke pe coperta o deschide (finala).</li>
+  <li>Serverul scoate scenele (titlu, personaje, loc, o fraza); ele ies din carte una cate una si se aseaza ca un drum prin camera, deja legate cu fire (finala).</li>
+  </ol></li>
+ <li><b>Activitate 2. Merge pe drum si continua.</b>
+  <ol>
+  <li>Poke pe o scena o deschide la textul ei complet (panou de 40 x 30 cm, scroll cu degetul) (finala).</li>
+  <li>Pe ultimul card din drum merge acelasi dropdown (Continua textul, Scoate idei, prompturile mele) (finala).</li>
+  </ol></li>
+ </ol></li>
+
+<li><b>Goal 5. Isi doreste sa-si faca propriile actiuni pentru AI.</b>
+ <ol>
+ <li><b>Activitate 1. Scrie un prompt nou.</b>
+  <ol>
+  <li>"+ prompt nou" in dropdown: un nume si textul promptului, scrise cu tastatura Quest (finala).</li>
+  <li>Pe PC, in Soft Shape, aceeasi lista se poate edita mai comod; se salveaza intr-un JSON si apare imediat in dropdown (finala).</li>
+  </ol></li>
+ </ol></li>
+
+<li><b>Goal 6. Isi doreste sa revina mai tarziu exact unde a ramas.</b>
+ <ol>
+ <li><b>Activitate 1. Salvare si revenire.</b>
+  <ol>
+  <li>Pozitia, marimea si firele fiecarui card se salveaza automat pe PC, la 5 s dupa ultima schimbare si la iesire (partiala).</li>
+  <li>"Continua ultima camera" reface camera exact; daca un fisier a fost sters de pe PC, cardul lui apare gri, cu "Fisier lipsa" (partiala).</li>
+  </ol></li>
+ </ol></li>
+</ol>
+
+<h2>Utilizator 2. Participantul la studiu</h2>
+<p>Utilizatorul este un coleg care nu a mai folosit aplicatia (si poate nici hand tracking-ul pe Quest). Primeste un folder pregatit de mine (20 de imagini si 6 texte scurte, aceleasi pentru toti) si face o sarcina de 15 minute. Jumatate din participanti au sugestiile pornite (fire, +, drumuri), jumatate nu.</p>
+<ol>
+<li><b>Goal 1. Are nevoie sa inteleaga repede cum se lucreaza cu mainile.</b>
+ <ol>
+ <li><b>Activitate 1. Face tutorialul.</b>
+  <ol>
+  <li>Aceiasi 3 pasi ca la creator; nu poate sari peste ei (finala).</li>
+  <li>Daca o mana nu e vazuta de casti, apare un mesaj discret "Tine mainile in fata" (partiala).</li>
+  </ol></li>
+ </ol></li>
+<li><b>Goal 2. Are nevoie sa termine sarcina: "Grupeaza cardurile si leaga-le in povesti".</b>
+ <ol>
+ <li><b>Activitate 1. Lucreaza 15 minute in camera.</b>
+  <ol>
+  <li>Un ceas mic pe incheietura arata timpul ramas; la final camera ingheata si apare "Gata, multumesc" (finala).</li>
+  <li>Cu sugestii: are dropdown-ul, + si drumurile. Fara sugestii: aceeasi camera, fara ele (finala).</li>
+  </ol></li>
+ </ol></li>
+<li><b>Goal 3. Are nevoie sa raspunda la intrebari dupa.</b>
+ <ol>
+ <li><b>Activitate 1. Chestionare si test de memorie.</b>
+  <ol>
+  <li>SUS si NASA-TLX, imediat dupa, pe telefon/PC (Google Forms) (finala).</li>
+  <li>Dupa o saptamana: ce era pe carduri si unde erau (pune cardurile inapoi pe un plan al camerei) (finala).</li>
+  </ol></li>
+ </ol></li>
+</ol>
+
+<h2>Utilizator 3. Eu, ca cercetator</h2>
+<p>Pregatesc studiul si citesc rezultatele, de pe PC.</p>
+<ol>
+<li><b>Goal 1. Am nevoie sa pornesc o sesiune de studiu cu conditia corecta.</b>
+ <ol>
+ <li><b>Activitate 1. Configurez sesiunea.</b>
+  <ol>
+  <li>Pagina "Studiu" in Soft Shape: cod participant, conditie (cu/fara sugestii), folderul de studiu, durata (finala).</li>
+  </ol></li>
+ </ol></li>
+<li><b>Goal 2. Am nevoie de date.</b>
+ <ol>
+ <li><b>Activitate 1. Citesc logurile.</b>
+  <ol>
+  <li>Fiecare actiune se scrie intr-un fisier per participant: card scos, mutat, lipit, fir facut/sters, sugestie primita/pastrata/aruncata, cu timp si pozitie (finala).</li>
+  <li>Export CSV cu: numar de fire, sugestii pastrate, timp pana la primul fir, plus o poza de sus a camerei la final (finala).</li>
+  </ol></li>
+ </ol></li>
+</ol>
+
+<h1>Journey Map (2p)</h1>
+<p>Trei journey maps: unul pentru fiecare tip de utilizare. Primul e functionalitatea principala si e scris pas cu pas, element cu element.</p>
+
+<h2>Journey 1. Creatorul continua o poveste (functionalitatea principala)</h2>
+<p>Situatia: am 3 scene scrise din capitolul 3 ca fisiere .md si vreau sa vad cum ar putea continua.</p>
+<table border="1" cellpadding="5" style="border-collapse:collapse">
+<tr><th>#</th><th>Etapa</th><th>Ce face utilizatorul</th><th>Ce vede / aude</th><th>Ce face aplicatia (in spate)</th><th>Ce simte</th><th>Ce poate merge prost si ce facem</th></tr>
+<tr><td>1</td><td>Intra</td><td>Pune castile, pinch pe "Continua ultima camera"</td><td>Fade 0.5 s in camera lui, cardurile la locul lor</td><td>GET /layout, apoi GET /file/:id pentru fiecare card vizibil (cele din spate se incarca dupa)</td><td>Familiar, "e camera mea"</td><td>Serverul nu raspunde: mesaj "Porneste Soft Shape pe PC" + buton Reincearca</td></tr>
+<tr><td>2</td><td>Scoate scenele</td><td>Poke pe sertarul Texte, trage 3 fise afara</td><td>Fise mici, apoi carduri A5 cu titlu si primele randuri</td><td>GET /files?type=text; textul complet vine doar cand cardul e scos</td><td>Control</td><td>Nu nimereste fisa: fisele au zona de prindere mai mare decat desenul (1 cm in plus)</td></tr>
+<tr><td>3</td><td>Le aseaza</td><td>Le lipeste pe perete, de la stanga la dreapta</td><td>Umbra pe perete sub 15 cm, "clic" de hartie la lipire</td><td>Snap paralel cu peretele, salvare layout la 5 s</td><td>Ordine</td><td>Cardurile se suprapun: se imping usor unul pe altul (minim 2 cm intre ele)</td></tr>
+<tr><td>4</td><td>Le leaga</td><td>Pinch pe marginea Scenei 1, trage la Scena 2; apoi 2 la 3</td><td>Firul ocru urmeaza mana; cardul tinta se lumineaza; sunet de ata intinsa</td><td>Se creeaza un link {from, to}; lantul se recalculeaza</td><td>Satisfactie, "le-am legat"</td><td>Pinch-ul pe margine prinde cardul in loc de fir: banda de margine e de 2 cm si are alt contur la hover</td></tr>
+<tr><td>5</td><td>Selecteaza lantul</td><td>Poke pe un fir</td><td>Toate 3 cardurile primesc contur ocru; langa Scena 3 apare dropdown-ul</td><td>GET /actions (cache local, se reincarca la schimbare)</td><td>Curiozitate</td><td>Dropdown-ul apare in perete: e asezat mereu spre utilizator, la 15 cm in fata cardului</td></tr>
+<tr><td>6</td><td>Alege actiunea</td><td>Poke pe "Continua textul"</td><td>Dropdown-ul se strange intr-o eticheta pe fir: "Continua textul..."</td><td>POST /run {cards: [id1, id2, id3], action: "continue", n: 3}</td><td>Asteptare</td><td>-</td></tr>
+<tr><td>7</td><td>Asteapta</td><td>Poate muta alte carduri sau doar priveste</td><td>Firele pulseaza (1 puls/s); un ton slab, continuu</td><td>Serverul pune textele in ordine, adauga promptul actiunii, cere 3 variante de la model (OpenRouter)</td><td>Usor nerabdator</td><td>Peste 30 s: "Dureaza prea mult" + Reincearca. Palma spre lant 1 s anuleaza</td></tr>
+<tr><td>8</td><td>Vede drumurile</td><td>Priveste cele 3 ramuri</td><td>Ramurile cresc din capatul lantului in 0.6 s; whoosh scurt</td><td>Raspuns: 3 x {title, text}; se pun la 40 cm una de alta, spre utilizator</td><td>Surpriza, "nu ma gandeam la asta"</td><td>Textul e prea lung pentru card: se vad titlul si 4 randuri, restul la marire</td></tr>
+<tr><td>9</td><td>Citeste</td><td>Pinch tinut pe ramura B</td><td>Ramura se mareste 2x si devine opaca cat e tinuta</td><td>-</td><td>Concentrare</td><td>-</td></tr>
+<tr><td>10</td><td>Alege</td><td>Pinch scurt pe B; arunca A cu palma</td><td>B devine card normal, firul devine ocru plin; A se dizolva</td><td>Link nou Scena 3 -> B; append in carte_continuare.md</td><td>"E povestea mea, am ales eu"</td><td>A fost aruncata din greseala: Anuleaza pe incheietura</td></tr>
+<tr><td>11</td><td>Continua</td><td>Poke pe firul nou, din nou "Continua textul" sau un prompt al lui</td><td>Acelasi ciclu, de la pasul 6</td><td>Lantul are acum 4 carduri</td><td>Flow</td><td>-</td></tr>
+<tr><td>12</td><td>Iese</td><td>Scoate castile</td><td>-</td><td>Layout salvat la iesire; fisierul de continuare e deja pe PC</td><td>Liniste, nimic nu se pierde</td><td>-</td></tr>
+</table>
+
+<h2>Journey 2. Creatorul exploreaza imagini</h2>
+<table border="1" cellpadding="5" style="border-collapse:collapse">
+<tr><th>#</th><th>Etapa</th><th>Ce face</th><th>Ce vede</th><th>Ce face aplicatia</th><th>Ce simte</th></tr>
+<tr><td>1</td><td>Alege o imagine</td><td>Trage o poza de turn din sertarul Imagini si o lipeste pe perete</td><td>Card imagine 30 cm</td><td>GET /file/:id</td><td>-</td></tr>
+<tr><td>2</td><td>Vede ce e in ea</td><td>Poke pe imagine</td><td>Descrierea sub ea, 5-8 bule de taguri in arc</td><td>GET /describe/:id (deja calculat la indexare)</td><td>"Asa vede aplicatia poza mea"</td></tr>
+<tr><td>3</td><td>Urmeaza un tag</td><td>Poke pe bula "ceata", apoi "Imagini cu tagul"</td><td>6 fise mici langa bula</td><td>GET /tag/ceata</td><td>Curiozitate</td></tr>
+<tr><td>4</td><td>Pastreaza</td><td>Trage 2 fise afara langa turn</td><td>Carduri noi</td><td>-</td><td>"Astea merg impreuna"</td></tr>
+<tr><td>5</td><td>Cere sugestii</td><td>Poke pe +</td><td>3-5 sugestii semitransparente</td><td>POST /suggest {card: id}</td><td>Surpriza</td></tr>
+<tr><td>6</td><td>Leaga de poveste</td><td>Trage un fir de la poza la Scena 3</td><td>Fir ocru</td><td>Data viitoare, descrierea pozei intra in prompt</td><td>Ideile se leaga</td></tr>
+</table>
+
+<h2>Journey 3. Participantul la studiu</h2>
+<table border="1" cellpadding="5" style="border-collapse:collapse">
+<tr><th>#</th><th>Etapa</th><th>Ce face</th><th>Ce vede</th><th>Ce simte</th><th>Ce poate merge prost</th></tr>
+<tr><td>1</td><td>Inainte</td><td>Semneaza acordul, ii explic sarcina in 2 minute</td><td>-</td><td>Emotie, "n-am mai folosit VR"</td><td>-</td></tr>
+<tr><td>2</td><td>Tutorial</td><td>Prinde, lipeste, leaga</td><td>Instructiuni pe un panou, cate un pas</td><td>Invata, primele reusite</td><td>Mainile nu sunt vazute: mesaj "Tine mainile in fata"</td></tr>
+<tr><td>3</td><td>Sarcina</td><td>15 minute: grupeaza 26 de carduri si le leaga</td><td>Ceas pe incheietura; cu sau fara sugestii</td><td>Concentrare, uneori blocaj</td><td>Oboseala bratelor: cardurile se pot pune si pe birou, la inaltimea mainilor</td></tr>
+<tr><td>4</td><td>Final</td><td>Scoate castile</td><td>"Gata, multumesc"</td><td>Usurare</td><td>-</td></tr>
+<tr><td>5</td><td>Chestionare</td><td>SUS + NASA-TLX</td><td>Google Forms</td><td>-</td><td>-</td></tr>
+<tr><td>6</td><td>O saptamana mai tarziu</td><td>Isi aminteste cardurile si unde erau</td><td>Planul camerei pe hartie/PC</td><td>-</td><td>Nu mai vine: il chem online, cu planul pe ecran</td></tr>
+</table>
+
+<h1>Wireframing / Storyboarding (3p)</h1>
+<p>Schite ale momentelor cheie, in ordinea Journey 1 (cadrele 1-8), plus imaginile (9), cartea (10) si planul camerei (11), folosit si pentru graybox. Sunt desenate simplu, doar ca sa fixez ce apare unde. Imaginile sunt si in repo: <a href="https://github.com/Ayletheris/storypinner/tree/main/docs/storyboard">docs/storyboard</a> (desenate cu docs/tools/storyboard.py).</p>
+<p><b>1. Main Menu.</b> Panou la 1.2 m in fata, la inaltimea ochilor. Ultimul folder e preselectat; un pinch si esti in camera.<br><img src="storyboard/01.png" width="600"></p>
+<p><b>2. Raftul.</b> Raftul sta langa birou. Fisierele de pe PC sunt pe tipuri (sertare); tragi una afara si devine card in camera.<br><img src="storyboard/02.png" width="600"></p>
+<p><b>3. Lipire pe perete.</b> Sub 15 cm de perete apare umbra si cardul se lipeste; lasat in aer, ramane plutind. Cu doua maini il mari (0.5x - 3x).<br><img src="storyboard/03.png" width="600"></p>
+<p><b>4. Firul.</b> Pinch pe marginea cardului, tragi pana la urmatorul. Firul ramane legat si cand muti cardurile; mai multe fire fac un lant.<br><img src="storyboard/04.png" width="600"></p>
+<p><b>5. Dropdown-ul.</b> Poke pe un fir selecteaza tot lantul; langa ultimul card apare lista de actiuni (* = prompturile mele).<br><img src="storyboard/05.png" width="600"></p>
+<p><b>6. Asteptare.</b> Firele pulseaza, mainile raman libere. Palma spre lant 1 s anuleaza; dupa 30 s apare "Incearca din nou".<br><img src="storyboard/06.png" width="600"></p>
+<p><b>7. Trei drumuri.</b> Trei ramuri semitransparente in evantai, cu titlu si inceputul textului; pinch tinut = citesti tot.<br><img src="storyboard/07.png" width="600"></p>
+<p><b>8. Alegi un drum.</b> Pinch pe B il face card normal, legat de lant si salvat in fisierul de continuare; A se arunca cu palma.<br><img src="storyboard/08.png" width="600"></p>
+<p><b>9. Imagine, taguri si +.</b> Poke pe imagine: descrierea sub ea, tagurile in arc deasupra; + aduce sugestii.<br><img src="storyboard/09.png" width="600"></p>
+<p><b>10. Cartea ca lant.</b> Scenele ies din carte in ordine, deja legate, ca un drum prin camera.<br><img src="storyboard/10.png" width="600"></p>
+<p><b>11. Planul camerei.</b> Vedere de sus, la scara; referinta pentru graybox.<br><img src="storyboard/11.png" width="600"></p>
+
+<h1>Planning Asset Creation (3p)</h1>
+<p>Legenda: <u>subliniat</u> = facut de mine de la zero; <span style="background-color:#ffff00">galben</span> = generat cu AI; restul au linkul sursei. Toate asset-urile luate de afara sunt CC0 sau gratuite pentru proiecte.</p>
+
+<h2>3D</h2>
+<p><i>(Blender, ProBuilder, Kenney, Poly Haven, Sketchfab)</i></p>
+<p><b>Graybox (acum, pentru testul de scara in VR):</b></p>
+<ul>
+<li><u>Camera de acasa: podea, tavan, 4 pereti, fereastra, usa (4.0 x 3.2 x 2.6 m, de masurat cu ruleta) - Blender, cutii simple</u></li>
+<li><u>Birou 1.2 x 0.6 x 0.75 m, scaun (sezut la 0.45 m), pat 2.0 x 0.9 x 0.45 m, dulap 1.0 x 0.6 x 2.0 m - cutii</u></li>
+<li><u>Raftul cu fisiere 1.0 x 0.35 x 1.2 m, 3 sertare intre 0.6 si 1.1 m inaltime (zona comoda pentru mana)</u></li>
+<li><u>Card imagine 0.30 x 0.225 x 0.01 m si card text 0.15 x 0.21 x 0.005 m (A5)</u></li>
+<li><u>Fisa mica din sertar 0.06 x 0.04 m</u></li>
+<li><u>Cartea 0.17 x 0.24 x 0.04 m si panoul de scena 0.40 x 0.30 m</u></li>
+<li><u>Dropdown: panou 0.25 m latime, randuri de 4 cm (tinta minima pentru poke cu degetul)</u></li>
+<li><u>Bula de tag (sfera 5 cm), butonul + (4 cm), firul (cilindru 4 mm)</u></li>
+</ul>
+<p><b>Versiunea finala:</b></p>
+<ul>
+<li><u>Camera mea, modelata in Blender dupa dimensiunile reale, cu lumina calda coapta (baked lighting)</u></li>
+<li><u>Mobila principala: birou, pat, dulap, scaun (low-poly, dupa graybox)</u></li>
+<li><u>Rama cardului imagine (rama subtire de lemn) si foaia cardului text (hartie cu colt usor indoit)</u></li>
+<li><u>Raftul cu sertare, cu etichete pe fiecare sertar</u></li>
+<li><u>Cartea (coperta + pagini, se deschide cu o animatie simpla)</u></li>
+<li>Mobila si obiecte extra (rafturi, lampa, plante, covor): Kenney Furniture Kit - <a href="https://kenney.nl/assets/furniture-kit">kenney.nl/assets/furniture-kit</a></li>
+<li>Plante si obiecte mici realiste: Poly Haven Models - <a href="https://polyhaven.com/models">polyhaven.com/models</a></li>
+<li><span style="background-color:#ffff00">Obiecte mici de pe birou (cana, teanc de carti, suport de creioane) - Meshy (text to 3D), simplificate in Blender</span></li>
+<li>Mainile: Meta XR Interaction SDK (mainile din SDK) - <a href="https://developers.meta.com/horizon/documentation/unity/unity-isdk-interaction-sdk-overview/">Interaction SDK</a></li>
+<li>Variante extra de camera (atelier, biblioteca), daca e timp: Kenney + Poly Haven</li>
+</ul>
+
+<h2>Graphics &amp; 2D</h2>
+<ul>
+<li><u>UI: Main Menu, dropdown-ul, meniul de pe incheietura, mesajele de eroare (design propriu, dupa wireframe-uri)</u></li>
+<li><u>Conturul de hover/selectie al cardurilor (shader propriu, Shader Graph)</u></li>
+<li>Iconite (lupa, +, anuleaza, salveaza, sertare): Google Material Symbols - <a href="https://fonts.google.com/icons">fonts.google.com/icons</a></li>
+<li>Font pentru carduri si UI: Atkinson Hyperlegible (citibil in VR) - <a href="https://fonts.google.com/specimen/Atkinson+Hyperlegible">Google Fonts</a></li>
+<li>Texturi: hartie, lemn, tencuiala, textil - Poly Haven - <a href="https://polyhaven.com/textures">polyhaven.com/textures</a> si ambientCG - <a href="https://ambientcg.com/">ambientcg.com</a></li>
+<li>HDRI pentru lumina de seara de la fereastra: Poly Haven - <a href="https://polyhaven.com/hdris">polyhaven.com/hdris</a></li>
+<li><span style="background-color:#ffff00">Iconita aplicatiei (pentru Quest) - generata cu AI, apoi curatata de mine</span></li>
+<li><u>Fisierele de continut: imaginile mele de referinta si capitolele cartii mele</u></li>
+<li>Folderul pentru studiu: 20 de imagini de pe Wikimedia Commons (licente libere) - <a href="https://commons.wikimedia.org/">commons.wikimedia.org</a> + <u>6 texte scurte scrise de mine</u></li>
+</ul>
+
+<h2>Sounds</h2>
+<p><i>(freesound.org, Kenney, elevenlabs)</i></p>
+<ul>
+<li>Prins si lipit card (hartie): Freesound - <a href="https://freesound.org/search/?q=paper+handling">freesound.org: paper handling</a></li>
+<li>Fir intins: Freesound - <a href="https://freesound.org/search/?q=string+pluck">freesound.org: string pluck</a></li>
+<li>Click pe dropdown si butoane: Kenney UI Audio - <a href="https://kenney.nl/assets/ui-audio">kenney.nl/assets/ui-audio</a></li>
+<li><span style="background-color:#ffff00">Whoosh cand ies drumurile si sunetul de dizolvare la aruncare - ElevenLabs Sound Effects</span></li>
+<li><span style="background-color:#ffff00">Tonul slab de asteptare - ElevenLabs Sound Effects</span></li>
+<li>Sertar deschis/inchis: Freesound - <a href="https://freesound.org/search/?q=wooden+drawer">freesound.org: wooden drawer</a></li>
+<li>Muzica ambientala linistita: Pixabay Music - <a href="https://pixabay.com/music/search/ambient%20calm/">pixabay.com/music: ambient calm</a></li>
+<li>Ambient de camera (ploaie la fereastra, optional): Freesound - <a href="https://freesound.org/search/?q=rain+window">freesound.org: rain window</a></li>
+</ul>
+
+<h2>VFX</h2>
+<ul>
+<li><u>Pulsul firului cat se asteapta (shader propriu pe LineRenderer)</u></li>
+<li><u>Ramurile care cresc din capatul lantului (animatie proprie, DOTween)</u></li>
+<li><u>Dizolvarea cardului aruncat (Shader Graph, dissolve)</u></li>
+<li><u>Umbra cardului pe perete cand e aproape (decal simplu)</u></li>
+<li><u>Particule mici care ies din fir cand apar sugestiile (Particle System)</u></li>
+<li>Praf in lumina de la fereastra: Unity Particle Pack - <a href="https://assetstore.unity.com/packages/vfx/particles/particle-pack-127325">Asset Store</a></li>
+</ul>
+
+<h2>Alte asseturi</h2>
+<ul>
+<li>Unity 6 LTS (URP): <a href="https://unity.com/releases/lts">unity.com</a></li>
+<li>Meta XR Interaction SDK: <a href="https://developers.meta.com/horizon/documentation/unity/unity-isdk-interaction-sdk-overview/">developers.meta.com</a></li>
+<li>ProBuilder (pentru graybox direct in Unity): <a href="https://docs.unity3d.com/Packages/com.unity.probuilder@6.0/manual/index.html">Unity ProBuilder</a></li>
+<li>DOTween: <a href="https://dotween.demigiant.com/">dotween.demigiant.com</a></li>
+<li>Newtonsoft Json for Unity: <a href="https://docs.unity3d.com/Packages/com.unity.nuget.newtonsoft-json@3.2/manual/index.html">Unity package</a></li>
+<li>OpenCLIP: <a href="https://github.com/mlfoundations/open_clip">github.com/mlfoundations/open_clip</a></li>
+<li>JoyTag: <a href="https://github.com/fpgaminer/joytag">github.com/fpgaminer/joytag</a></li>
+<li>OpenRouter (modelul de limbaj): <a href="https://openrouter.ai/">openrouter.ai</a></li>
+<li>Blender: <a href="https://www.blender.org/">blender.org</a></li>
+</ul>
+
+</body></html>
