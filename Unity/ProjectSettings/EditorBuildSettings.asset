@@ -6,7 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Room.unity
+    guid: cc7f566a2aa11db4990ed10201fc46a7
+  - enabled: 1
+    path: Assets/Scenes/Graybox.unity
+    guid: f8b4e661b7b99074a8e9474c3dd81eef
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 74c060bcbd03d5b48bd2177a4d31d1f3, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 13c2498888ebc9441ad7ad7970bb6469, type: 2}
