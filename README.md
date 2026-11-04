@@ -30,7 +30,12 @@ Prezentare finala: drumurile multiple, prompturile mele, descrierea si tagurile,
 
 ## Structura
 
-- `Unity/` - aplicatia VR: proiectul de baza (Unity 6000.6.4f1, URP); Meta XR SDK urmeaza
+- `Unity/` - aplicatia VR (Unity 6000.6.4f1, URP), cu acelasi setup VR ca la laboratoare: XR Interaction Toolkit 3.6.1 (Starter Assets + XR Device Simulator), OpenXR 1.18.0 pe Standalone cu profilul Oculus Touch (Quest prin Link / Air Link)
+  - `Assets/Scenes/Room.unity` - scena simpla: camera goala + fiecare obiect ca instanta separata a unui model din `Models/`, pus dupa `layout.json`; XR Origin pe pozitia de start, iar cardurile, fisele, cartea, tagurile si butonul + se pot prinde cu controller-ul (meniul Storypinner > Build Room Scene)
+  - `Assets/Scenes/Graybox.unity` - aceeasi camera, dintr-un singur FBX (Storypinner > Build Graybox Scene)
+  - `Assets/Graybox/` - camera exportata din Blender (`Graybox.fbx`), modelele separate cu pivotul in origine (`Models/`: carduri, raft, carte, dropdown, bule de taguri, butonul +, fir, mobila), materialele URP si scriptul care face scena (meniul Storypinner > Build Graybox Scene)
+- `Blender/graybox.py` - graybox-ul camerei, doar cutii si sfere la scara reala; `blender -b -P Blender/graybox.py` reface `graybox.blend` (tot + modelele pe un rand), `room.blend` (camera mobilata cu instante ale modelelor), `Graybox.fbx`, `Models/`, `RoomShell.fbx` si `layout.json`
+- `docs/` - storyboard-ul si sursa documentului de la Tema 5
 - serverul de pe PC (Node) se bazeaza pe hub-ul meu Soft Shape: fisiere, indexare CLIP, taguri JoyTag/WD14, apeluri catre model
 
 ## Progres saptamanal
@@ -43,4 +48,4 @@ Prezentare finala: drumurile multiple, prompturile mele, descrierea si tagurile,
 ### Saptamana 2
 
 - Tema 5: user story map (creator, participant la studiu, cercetator), 3 journey maps, storyboard de 11 cadre, planul de asset-uri
-- Planul camerei la scara, pentru graybox
+- Planul camerei la scara si graybox-ul ei in Blender (camera 4.0 x 3.2 x 2.6 m, mobila, raftul cu sertare, carduri A5 si imagine, firele, 3 drumuri, dropdown-ul, tagurile si butonul +, cartea), importat intr-o scena Unity
