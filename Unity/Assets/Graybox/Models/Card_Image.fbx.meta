@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Trim
+    second: {fileID: 2100000, guid: 79561b61ca0c9b546bdc08efc9be75d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Wood
     second: {fileID: 2100000, guid: 719a13feb31a99f42bf7e34151642f0a, type: 2}
   materials:

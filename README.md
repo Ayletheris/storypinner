@@ -34,7 +34,7 @@ Prezentare finala: drumurile multiple, prompturile mele, descrierea si tagurile,
   - `Assets/Scenes/Room.unity` - scena simpla: camera goala + fiecare obiect ca instanta separata a unui model din `Models/`, pus dupa `layout.json`; XR Origin pe pozitia de start, iar cardurile, fisele, cartea, tagurile si butonul + se pot prinde cu controller-ul (meniul Storypinner > Build Room Scene)
   - `Assets/Scenes/Graybox.unity` - aceeasi camera, dintr-un singur FBX (Storypinner > Build Graybox Scene)
   - `Assets/Graybox/` - camera exportata din Blender (`Graybox.fbx`), modelele separate cu pivotul in origine (`Models/`: carduri, raft, carte, dropdown, bule de taguri, butonul +, fir, mobila), materialele URP si scriptul care face scena (meniul Storypinner > Build Graybox Scene)
-- `Blender/graybox.py` - graybox-ul camerei, doar cutii si sfere la scara reala; `blender -b -P Blender/graybox.py` reface `graybox.blend` (tot + modelele pe un rand), `room.blend` (camera mobilata cu instante ale modelelor), `Graybox.fbx`, `Models/`, `RoomShell.fbx` si `layout.json`
+- `Blender/graybox.py` - camera, doar cutii, cilindri, conuri si sfere la scara reala; `blender -b -P Blender/graybox.py` reface `graybox.blend` (tot + modelele pe un rand), `room.blend` (camera mobilata cu instante ale modelelor), `Graybox.fbx`, `Models/`, `RoomShell.fbx` si `layout.json`
 - `docs/` - storyboard-ul si sursa documentului de la Tema 5
 - serverul de pe PC (Node) se bazeaza pe hub-ul meu Soft Shape: fisiere, indexare CLIP, taguri JoyTag/WD14, apeluri catre model
 
@@ -48,4 +48,10 @@ Prezentare finala: drumurile multiple, prompturile mele, descrierea si tagurile,
 ### Saptamana 2
 
 - Tema 5: user story map (creator, participant la studiu, cercetator), 3 journey maps, storyboard de 11 cadre, planul de asset-uri
-- Planul camerei la scara si graybox-ul ei in Blender (camera 4.0 x 3.2 x 2.6 m, mobila, raftul cu sertare, carduri A5 si imagine, firele, 3 drumuri, dropdown-ul, tagurile si butonul +, cartea), importat intr-o scena Unity
+- Planul camerei la scara si graybox-ul ei in Blender (camera 4.0 x 3.2 x 2.6 m la inceput, mobila, raftul cu sertare, carduri A5 si imagine, firele, 3 drumuri, dropdown-ul, tagurile si butonul +, cartea), importat intr-o scena Unity
+
+### Saptamana 3
+
+- Camera refacuta mult mai mare (8.0 x 6.5 x 3.4 m), tot din forme simple, cu tema night mode intunecata: pereti si mobila in albastru inchis, fereastra deschisa spre un cer cu luna si stele, perdele, covor, canapea cu masuta si lumanare, monitor, lampa pe birou, veioza, raft cu carti, plante, o ghirlanda de luminite si benzi LED albastre (sub tavan, sub pat, sub canapea, in spatele monitorului)
+- In Unity: materiale cu emisie (cardurile, firele cyan, luna, luminitele), lumina lunii care intra pe fereastra, lampi calde, o lumina cyan pe peretele cu lantul de scene, ambient si ceata albastra, bloom (volumul `Assets/Graybox/NightVolume.asset`)
+- Capturi in `docs/screenshots`

@@ -14,6 +14,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Card
     second: {fileID: 2100000, guid: 95fbcb316f50baf468a27056dd29d475, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cover
+    second: {fileID: 2100000, guid: 41cd604f123f7e64882975a58a929fe4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

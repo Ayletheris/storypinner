@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Furniture
     second: {fileID: 2100000, guid: 96ca666c88efd13469a0134fb9506e8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trim
+    second: {fileID: 2100000, guid: 79561b61ca0c9b546bdc08efc9be75d1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

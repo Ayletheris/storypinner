@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Fabric
+    second: {fileID: 2100000, guid: f5c6117fa1c34ce4fbf082d7f6b4c60b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Furniture
     second: {fileID: 2100000, guid: 96ca666c88efd13469a0134fb9506e8e, type: 2}
   materials:
